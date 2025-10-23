@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+const posts = await getCollection("blog");
+---
+
+<Layout>
+    <ul>
+        {
+            posts.map((post: any) => (
+                <li>
+                    <a href={`/${post.id}`} class="pageLink">
+                        {post.data.title}
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+</Layout>
+
+<style></style>
