@@ -2,12 +2,17 @@
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 const posts = await getCollection("blog");
+const sortedPosts = posts.sort(
+    (a: any, b: any) =>
+        new Date(b.data.publishDate).getTime() -
+        new Date(a.data.publishDate).getTime(),
+);
 ---
 
 <Layout>
     <ul>
         {
-            posts.map((post: any) => (
+            sortedPosts.map((post: any) => (
                 <li>
                     <a href={`/${post.id}`} class="pageLink">
                         {post.data.title}
