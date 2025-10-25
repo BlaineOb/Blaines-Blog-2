@@ -17,10 +17,30 @@ const sortedPosts = posts.sort(
                     <a href={`/${post.id}`} class="pageLink">
                         {post.data.title}
                     </a>
+                    <p>{post.data.publishDate}</p>
                 </li>
             ))
         }
     </ul>
 </Layout>
 
-<style></style>
+<style>
+    ul {
+        list-style-type: none;
+        margin: 0 0 0 var(--default-margin);
+        padding: 0;
+    }
+
+    li {
+        margin-top: 20px;
+    }
+
+    a {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: var(--content-font-size);
+        font-style: italic;
+    }
+</style>

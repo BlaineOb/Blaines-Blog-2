@@ -51,7 +51,6 @@ h4,
 h5,
 h6 {
     overflow-wrap: break-word;
-    padding: 16px 0;
 }
 
 /* 9. Improve line wrapping */
@@ -78,6 +77,8 @@ h6 {
 /*css variables*/
 :root {
     --default-margin: 10%;
+    --h1-font-size: 3.5rem;
+    --content-font-size: 1.25rem;
 }
 
 html {
@@ -88,4 +89,5 @@ html {
 
 .pageLink {
     color: #1db954;
+    text-decoration: none;
 }
