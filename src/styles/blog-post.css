@@ -8,6 +8,10 @@ h1 {
     color: #1db954;
 }
 
+h2 {
+    color: #1db954;
+}
+
 p {
     font-size: var(--content-font-size);
     line-height: 2.25rem;
@@ -16,7 +20,9 @@ p {
 
 img {
     margin: 16px auto;
-    width: 75%;
+    width: auto;
+    height: auto;
+    max-width: 75%;
 }
 
 article h1 {
