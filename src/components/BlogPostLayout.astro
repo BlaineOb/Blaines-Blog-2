@@ -1,9 +1,25 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "../styles/blog-post.css";
-// const { frontmatter } = Astro.props;
 ---
 
 <Layout>
-    <slot />
+    <div id="articleContainer">
+        <article>
+            <slot />
+        </article>
+    </div>
 </Layout>
+
+<style>
+    #articleContainer {
+        margin: 0 5%;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 50px;
+    }
+
+    article {
+        max-width: 1100px;
+    }
+</style>

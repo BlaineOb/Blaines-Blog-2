@@ -1,8 +1,31 @@
 a {
     color: hsl(208, 77%, 47%);
+    text-decoration: none;
 }
 
 h1 {
     font-size: var(--h1-font-size);
     color: #1db954;
+}
+
+p {
+    font-size: var(--content-font-size);
+    line-height: 2.25rem;
+    margin: 1rem 0;
+}
+
+img {
+    margin: 16px auto;
+    width: 75%;
+}
+
+article h1 {
+    padding-bottom: 10px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+sup {
+    line-height: 0;
 }
