@@ -13,10 +13,12 @@ import "../styles/blog-post.css";
 
 <style>
     #articleContainer {
-        margin: 0 5%;
         display: flex;
         justify-content: center;
         padding-bottom: 50px;
+        @media (max-width: 1100px) {
+            margin: 0 5%;
+        }
     }
 
     article {
