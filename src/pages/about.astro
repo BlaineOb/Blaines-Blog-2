@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import photoOfMe from "../assets/BlogPhoto.png";
 ---
 
 <Layout>
@@ -8,6 +10,12 @@ import Layout from "../layouts/Layout.astro";
             Hey, I'm Blaine! I'm a DMV-based software developer with an interest
             in the web, sustainable infrastructure, and pro tennis.
         </p>
+        <Image
+            src={photoOfMe}
+            alt="Photo of me in Bilbao, Spain"
+            width="313"
+            height="393"
+        />
         <p>Email: blnob567@gmail.com</p>
         <div>
             <a
