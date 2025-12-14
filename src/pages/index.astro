@@ -14,7 +14,7 @@ const sortedPosts = posts.sort(
         {
             sortedPosts.map((post: any) => (
                 <li>
-                    <a href={`/${post.id}`} class="pageLink">
+                    <a href={`/${post.id}/`} class="pageLink">
                         {post.data.title}
                     </a>
                     <p>{post.data.publishDate}</p>
