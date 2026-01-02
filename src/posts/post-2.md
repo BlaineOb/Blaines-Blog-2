@@ -148,8 +148,8 @@ will be fully valued too.
        	>ridiculously slow</a>. Finally, in 2024 React came up with a solution to this: the React Compiler.
         This will go through your components and add in a bunch of memo wrappers to ensure that React doesn't
     re-render child nodes unnecessarily. The problem? This still does way more work than Signals,
-    the now-standard reactivity model used by other frameworks. Explained
-    <a href="https://www.builder.io/blog/react-compiler-will-not-solve-prop-drilling">here</a>
+    the now-standard reactivity model used by other frameworks. 
+    <a href="https://www.builder.io/blog/react-compiler-will-not-solve-prop-drilling">Explained here</a>
     by Angular creator, Miško Hevery.
     <a href="#footnote-ref-1"><sup>[return]</sup></a>
 </div>
