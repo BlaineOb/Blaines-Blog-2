@@ -9,11 +9,11 @@ const sortedPosts = posts.sort(
 );
 ---
 
-<Layout role="main">
-    <ul>
+<Layout>
+    <ul role="list">
         {
             sortedPosts.map((post: any) => (
-                <li>
+                <li role="listitem">
                     <a href={`/${post.id}/`} class="pageLink">
                         {post.data.title}
                     </a>
