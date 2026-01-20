@@ -1,6 +1,6 @@
 ---
 title: Strong Towns Web Performance Audit
-publishDate: 1/16/2026
+publishDate: 1/20/2026
 ---
 
 # Strong Towns Web Peformance Audit
