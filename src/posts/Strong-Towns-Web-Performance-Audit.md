@@ -84,7 +84,7 @@ do this by placing a `<link rel="preload">` in the `<head>` of the document. Thi
 loading the LCP image right away. We can also make sure that the browser tries to fetch it first(or nearly
 first) by putting the `fetchpriority="high"` attribute on our preload link. Testing this simple change using
 [DebugBear](https://www.debugbear.com/?noredirect), I was able to load the LCP image 4.5 seconds faster on a 
-slow connection/device. ![Capture of network request for the pre-loaded LCP image during a DebugBear test](../assets/StrongTownsAudit/ST_preload_LCP_IMG.png)
+slow connection/device. ![Capture of network request for the pre-loaded LCP image during a DebugBear test](../assets/StrongTownsAudit/ST_Preload_LCP_IMG.png)
 
 ## Page is hidden with CSS while loading
 
