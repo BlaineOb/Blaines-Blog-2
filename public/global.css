@@ -99,15 +99,14 @@ html {
     font-family: Arial, sans-serif;
 }
 
-.pageLink {
+.pageLink,
+a {
     color: #1db954;
+    transition-property: color;
+    transition-duration: 0.15s;
     text-decoration: none;
 }
 
-a {
-    color: dodgerblue;
-}
-
 a:hover {
-    color: darkgray;
+    color: #91faad;
 }
