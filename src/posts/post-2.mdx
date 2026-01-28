@@ -3,6 +3,7 @@ title: Why is Web Performance Undervalued?
 publishDate: 8/7/2025
 ---
 import { Image } from 'astro:assets';
+import krogerTrace from '../assets/KrogerClientSideJS24.png'
 
 # Why is Web Performance Undervalued?
 
@@ -14,7 +15,7 @@ the board are shipping websites and web apps so sluggish that it is [killing the
 The economic upside of getting it right isn't tiny either. Years ago while working at Kroger, Taylor Hunt calculated that each
 KB of JavaScript sent to the client was costing the company [\$100,000 per year](https://dev.to/tigt/making-the-worlds-fastest-website-and-other-mistakes-56na#fnref),
 *as a lower bound*. How much is Kroger sending today?
-<Image src="/KrogerClientSideJS24.png" alt="Trace of Kroger.com inital load size"
+<Image src={krogerTrace} alt="Trace of Kroger.com inital load size"
 layout="constrained" width={1363} height={600} loading="eager" fetchpriority="high"/>
 Oh, Just 2.4 **Megabytes**. Out of a chonky 4 MB payload. Assuming they could rebuild the site to hit Alex Russell's target of
 [450 KB](https://infrequently.org/2021/03/the-performance-inequality-gap), that's conservatively $195,000,000

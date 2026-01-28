@@ -3,6 +3,8 @@ title: Strong Towns Web Performance Audit
 publishDate: 1/20/2026
 ---
 import { Image } from 'astro:assets';
+import pageSpeedCapture from "../assets/StrongTownsAudit/ST_PageSpeed_Insights.png";
+
 
 # Strong Towns Web Peformance Audit
 
@@ -17,7 +19,7 @@ of infrastructure dysfunction in the US, like I did. It's a fun time!
 Lately, I noticed the Strong Towns website felt a little slow to load, so I decided look into some
 of their RUM metrics. I pulled up PageSpeed Insights and sure enough, they were failing their
 [Core Web Vitals Assessment](https://pagespeed.web.dev/analysis/https-strongtowns-org/769d9uhmjp?form_factor=mobile).
-<Image src="/ST_PageSpeed_Insights.png" alt="PageSpeed Insights showing Core Web Vitals for StrongTowns.org for mobile users."
+<Image src={pageSpeedCapture} alt="PageSpeed Insights showing Core Web Vitals for StrongTowns.org for mobile users."
 layout="constrained" width={989} height={582} loading="eager" fetchpriority="high"/>
 INP and CLS looked great still, but LCP was sluggish, falling into the "poor" category for mobile
 users and just barely out of "poor" in the "needs improvement" section for desktop users. For context,
