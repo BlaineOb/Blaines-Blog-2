@@ -20,9 +20,8 @@ p {
 
 img {
     margin: 16px auto;
-    width: auto;
-    height: auto;
-    max-width: 75%;
+    max-inline-size: 80%;
+    block-size: auto;
 }
 
 article h1 {

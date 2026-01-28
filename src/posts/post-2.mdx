@@ -2,6 +2,7 @@
 title: Why is Web Performance Undervalued?
 publishDate: 8/7/2025
 ---
+import { Image } from 'astro:assets';
 
 # Why is Web Performance Undervalued?
 
@@ -9,11 +10,14 @@ Web performance is one of those things so fundamental to businesses that you wou
 If consumers care about performance, which seems [to be true](https://wpostats.com/), then in an efficient, competitive
 market you would expect businesses to be under immense pressure to optimize it. And yet, poor web performance is
 [ubiquitous](https://infrequently.org/2024/10/platforms-are-competitions/#fn-failure-on-repeat-2). Huge companies across
-the board are shipping websites and web apps so sluggish that it is [killing the web](https://infrequently.org/2024/10/platforms-are-competitions/). The economic upside of getting it right isn't tiny either.
-Years ago while working at Kroger, Taylor Hunt calculated that each KB of JavaScript sent to the client was costing the company
-[\$100,000 per year](https://dev.to/tigt/making-the-worlds-fastest-website-and-other-mistakes-56na#fnref), *as a lower bound*.
-How much is Kroger sending today? ![Trace of Kroger.com inital load size](../assets/KrogerClientSideJS24.png) Oh, Just 2.4
-**Megabytes**. Out of a chonky 4 MB payload. Assuming they could rebuild the site to hit Alex Russell's target of [450 KB](https://infrequently.org/2021/03/the-performance-inequality-gap), that's conservatively $195,000,000
+the board are shipping websites and web apps so sluggish that it is [killing the web](https://infrequently.org/2024/10/platforms-are-competitions/).
+The economic upside of getting it right isn't tiny either. Years ago while working at Kroger, Taylor Hunt calculated that each
+KB of JavaScript sent to the client was costing the company [\$100,000 per year](https://dev.to/tigt/making-the-worlds-fastest-website-and-other-mistakes-56na#fnref),
+*as a lower bound*. How much is Kroger sending today?
+<Image src="/KrogerClientSideJS24.png" alt="Trace of Kroger.com inital load size"
+layout="constrained" width={1363} height={600} loading="eager" fetchpriority="high"/>
+Oh, Just 2.4 **Megabytes**. Out of a chonky 4 MB payload. Assuming they could rebuild the site to hit Alex Russell's target of
+[450 KB](https://infrequently.org/2021/03/the-performance-inequality-gap), that's conservatively $195,000,000
 per year. [Not too bad](https://www.youtube.com/watch?v=UKpMhn07cxA&ab_channel=PetarPetrovic). And this is likely a
 *profound underestimation* of the real gain. As Taylor mentions in a [podcast](https://youtu.be/Vcq2DvkMz3k?t=7269),
 dramatic gains in performance wouldn't just lead to predictable linear gains in revenue. They would inspire unpredictably
@@ -144,11 +148,10 @@ will be fully valued too.
     1. Worse, React's rendering strategy is uniquely bad amongst modern frameworks. React by
     default cascades re-renders, so any change to a parent node will re-render all child nodes
     regardless of if they've been changed or not. This can quickly make things <a
-       	href="https://www.youtube.com/watch?v=INLq9RPAYUw&ab_channel=Theo-t3%E2%80%A4gg"
-       	>ridiculously slow</a>. Finally, in 2024 React came up with a solution to this: the React Compiler.
+       	href="https://www.youtube.com/watch?v=INLq9RPAYUw&ab_channel=Theo-t3%E2%80%A4gg">ridiculously slow</a>. Finally, in 2024 React came up with a solution to this: the React Compiler.
         This will go through your components and add in a bunch of memo wrappers to ensure that React doesn't
     re-render child nodes unnecessarily. The problem? This still does way more work than Signals,
-    the now-standard reactivity model used by other frameworks. 
+    the now-standard reactivity model used by other frameworks.
     <a href="https://www.builder.io/blog/react-compiler-will-not-solve-prop-drilling">Explained here</a>
     by Angular creator, Miško Hevery.
     <a href="#footnote-ref-1"><sup>[return]</sup></a>
