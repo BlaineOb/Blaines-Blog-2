@@ -14,12 +14,12 @@ const sortedPosts = posts.sort(
         <ul role="list">
             {
                 sortedPosts.map((post: any) => (
-                    <li role="listitem">
-                        <a href={`/${post.id}/`} class="pageLink">
+                    <a href={`/${post.id}/`} class="pageLink">
+                        <li role="listitem">
                             {post.data.title}
-                        </a>
-                        <p>{post.data.publishDate}</p>
-                    </li>
+                            <p style="color: white">{post.data.publishDate}</p>
+                        </li>
+                    </a>
                 ))
             }
         </ul>
@@ -35,6 +35,13 @@ const sortedPosts = posts.sort(
 
     li {
         margin-top: 20px;
+        width: fit-content;
+        padding: 8px 16px;
+        border-radius: 8px;
+    }
+
+    li:hover {
+        background-color: #333131;
     }
 
     a {
