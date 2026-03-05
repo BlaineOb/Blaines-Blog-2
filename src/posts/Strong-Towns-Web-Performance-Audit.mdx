@@ -4,6 +4,10 @@ publishDate: 1/20/2026
 ---
 import { Image } from 'astro:assets';
 import pageSpeedCapture from "../assets/StrongTownsAudit/ST_PageSpeed_Insights.png";
+import treoCapture from "../assets/StrongTownsAudit/ST_Treo.png";
+import speedHubCapture from "../assets/StrongTownsAudit/ST_SpeedHub1.png";
+import preloadLCP from "../assets/StrongTownsAudit/ST_Preload_LCP_IMG.png";
+import removeHidden from "../assets/StrongTownsAudit/ST_Remove_Hidden.png";
 
 
 # Strong Towns Web Peformance Audit
@@ -19,7 +23,7 @@ of infrastructure dysfunction in the US, like I did. It's a fun time!
 Lately, I noticed the Strong Towns website felt a little slow to load, so I decided look into some
 of their RUM metrics. I pulled up PageSpeed Insights and sure enough, they were failing their
 [Core Web Vitals Assessment](https://pagespeed.web.dev/analysis/https-strongtowns-org/769d9uhmjp?form_factor=mobile).
-<Image src={pageSpeedCapture} alt="PageSpeed Insights showing Core Web Vitals for StrongTowns.org for mobile users." loading="eager" fetchpriority="high"/>
+<Image src={pageSpeedCapture} alt="PageSpeed Insights showing Core Web Vitals for StrongTowns.org for mobile users." loading="eager" fetchpriority="high" decoding="sync" width="880" height="518"/>
 INP and CLS looked great still, but LCP was sluggish, falling into the "poor" category for mobile
 users and just barely out of "poor" in the "needs improvement" section for desktop users. For context,
 LCP is a measure of how long it took for the website to load the main content on the page. It's highly
@@ -28,7 +32,7 @@ site is loading on arrival. You could argue that LCP is the most important CWV m
 are frustrated by slow loading they might not even make it to the site at all. Treo shows that there has
 been a [recent regression](https://treo.sh/sitespeed/www.strongtowns.org) in FCP/LCP, but on mobile those
 two have been in "needs improvement" for most of the last year. What's going wrong here?
-![Treo site speed audit for StrongTowns.org, FCP/LCP](../assets/StrongTownsAudit/ST_Treo.png)
+<Image src={treoCapture} alt="Treo site speed audit for StrongTowns.org, FCP/LCP" width="880" height="535"/>
 
 ## Why should Strong Towns care?
 
@@ -38,8 +42,7 @@ make it to your website(or try to) will be less likely to spend time there, and 
 money there. Google also uses page speed metrics as a ranking factor, so fewer users will be sent to
 your website in the first place. SpeedHub, a free tool created by Google, Speed Kit, and the University
 Of Hamburg, allows us to estimate the the effect of "Page Speed" increases on key business metrics by aggregating the results of real-world case studies. For simplicity, let's plug in the current mobile LCP time from PageSpeed
-Insights as "before", and the minimum time to achieve a "good" LCP as "after"(2.5 seconds)<sup id="footnote-ref-1">[1](#footnote1)</sup>:
-![SpeedHub showing the business metrics improved by increasing "Page Speed"](../assets/StrongTownsAudit/ST_SpeedHub1.png)
+Insights as "before", and the minimum time to achieve a "good" LCP as "after"(2.5 seconds)<sup id="footnote-ref-1">[1](#footnote1)</sup>: <Image src={speedHubCapture} alt="SpeedHub showing the business metrics improved by increasing 'Page Speed'" width="880" height="408"/>
 We can see that with a quicker load time, users are likely to stay longer and spend more. This probably
 aligns with your personal experience. I certainly get frustrated at slow websites, espcecially on mobile,
 and I'm less likely to put up with them if there's a good alternative. Google also notices and sends much
@@ -88,7 +91,7 @@ do this by placing a `<link rel="preload">` in the `<head>` of the document. Thi
 loading the LCP image right away. We can also make sure that the browser tries to fetch it first(or nearly
 first) by putting the `fetchpriority="high"` attribute on our preload link. Testing this simple change using
 [DebugBear](https://www.debugbear.com/?noredirect), I was able to load the LCP image 4.5 seconds faster on a
-slow connection/device. ![Capture of network request for the pre-loaded LCP image during a DebugBear test](../assets/StrongTownsAudit/ST_Preload_LCP_IMG.png)
+slow connection/device. <Image src={preloadLCP} alt="Capture of network request for the pre-loaded LCP image during a DebugBear test" width="880" height="87"/>
 
 ## Page is hidden with CSS while loading
 
@@ -104,7 +107,7 @@ to avoid this problem is certainly one solution to the problem, but usually it's
 ways. The browser doesn't work like this by default for good reason. It's better for users to see a page being
 constructed, getting feedback that the page is actually working, versus seeing only a blank screen for a
 prolonged period of time. This filmstrip of my DebugBear test shows how different this can look for users with
-a slow connection: ![Capture of a filmstrip showing the difference between hiding the page with CSS and not](../assets/StrongTownsAudit/ST_Remove_Hidden.png)
+a slow connection: <Image src={removeHidden} alt="Capture of a filmstrip showing the difference between hiding the page with CSS and not" width="880" height="464"/>
 The top strip is using the live site code; the bottom strip removes the CSS hiding
 and preloads the LCP image. The user experiences 15 seconds of blank screen, where it's not obvious whether or
 not the site works at all. Then, they get a small popup before having to wait another 17 seconds for the site
