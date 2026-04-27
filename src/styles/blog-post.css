@@ -29,6 +29,7 @@ article h1 {
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 }
 
 sup {
@@ -49,4 +50,10 @@ blockquote > p {
 .footnote {
     font-size: 0.75rem;
     margin: 1rem 0;
+}
+
+figcaption {
+    width: fit-content;
+    margin: -12px auto 0 auto;
+    color: darkgrey;
 }
